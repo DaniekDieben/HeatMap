@@ -41,16 +41,24 @@ public class MainActivity extends AppCompatActivity {
         Button btn0010 = findViewById(R.id.button0010);
 
         Button[][] btnTag = new Button [10][10];
-        private void createb(){
+        private void createButton()
+    {
             int k=0;
             for (int i=0; i<9; i++){
                 TableRow row = new TableRow(this);
-                row.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,TableRow.));
+                row.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,TableRow.LayoutParams.WRAP_CONTENT));
+                for (int j=0; j<9;j++){
+                    btnTag[i][j] = new Button(this);
+                    btnTag[i][j].setText("");
+                    k++;
+                    btnTag[i][j].setId(k);
+                    row.addView (btnTag[i][j],30,30);
+                }
+                layout.addView(row);
             }
         }
-        
 
-        int [ ] [ ] matrix = new int [ 10 ] [ 10 ] ;
+        int [] [] matrix = new int [10] [10] ;
         // declare 2d 10x10 matrix
 
         // Uitgaand van 0-5 , 5-10, 10-15
